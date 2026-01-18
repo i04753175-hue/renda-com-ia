@@ -1,162 +1,238 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Renda com IA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renda com IA</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(180deg, #0f0f0f, #050505);
-      color: #ffffff;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #ffffff;
+  background:
+    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)),
+    url("https://images.unsplash.com/photo-1677442136019-21780ecad995");
+  background-size: cover;
+  background-position: center;
+}
 
-    .container {
-      max-width: 420px;
-      margin: auto;
-      padding: 24px;
-    }
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 24px;
+}
 
-    .badge {
-      background: #00ff99;
-      color: #000;
-      font-weight: bold;
-      font-size: 12px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      display: inline-block;
-      margin-bottom: 16px;
-    }
+.badge {
+  background: #ff3b3b;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
 
-    h1 {
-      font-size: 28px;
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
+h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
 
-    .subtitle {
-      font-size: 16px;
-      color: #cfcfcf;
-      margin-bottom: 24px;
-    }
+.subtitle {
+  font-size: 16px;
+  color: #ddd;
+  margin-bottom: 20px;
+}
 
-    .card {
-      background: #111;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 0 20px rgba(0,255,153,0.05);
-      margin-bottom: 24px;
-    }
+.timer-box {
+  background: #111;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 0 25px rgba(255,0,0,0.2);
+}
 
-    .card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+.timer-title {
+  font-size: 14px;
+  color: #ff3b3b;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
 
-    .card li {
-      margin-bottom: 12px;
-      font-size: 15px;
-    }
+.timer {
+  font-size: 26px;
+  font-weight: bold;
+}
 
-    .card li::before {
-      content: "✔ ";
-      color: #00ff99;
-      font-weight: bold;
-    }
+.alert {
+  background: #1a1a1a;
+  border-left: 4px solid #ff3b3b;
+  padding: 14px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
 
-    .price-box {
-      text-align: center;
-      margin: 24px 0;
-    }
+.card {
+  background: rgba(15,15,15,0.96);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
-    .price-old {
-      color: #999;
-      text-decoration: line-through;
-      font-size: 14px;
-    }
+.card h3 {
+  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
 
-    .price {
-      font-size: 32px;
-      font-weight: bold;
-      color: #00ff99;
-      margin: 8px 0;
-    }
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    .button {
-      background: linear-gradient(90deg, #00ff99, #00cc7a);
-      color: #000;
-      border: none;
-      width: 100%;
-      padding: 16px;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
+.card li {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
 
-    .button:hover {
-      transform: scale(1.02);
-    }
+.card li::before {
+  content: "✔ ";
+  color: #00ff99;
+  font-weight: bold;
+}
 
-    .security {
-      text-align: center;
-      font-size: 12px;
-      color: #aaa;
-      margin-top: 16px;
-    }
+.social-proof {
+  background: #0d0d0d;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 14px;
+  margin-bottom: 22px;
+  border: 1px solid #222;
+}
 
-    .footer {
-      text-align: center;
-      font-size: 11px;
-      color: #666;
-      margin-top: 32px;
-    }
-  </style>
+.price-box {
+  text-align: center;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+}
+
+.price {
+  font-size: 34px;
+  font-weight: bold;
+  color: #00ff99;
+  margin: 6px 0;
+}
+
+.button {
+  background: linear-gradient(90deg, #00ff99, #00cc7a);
+  color: #000;
+  border: none;
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 14px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.security {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 16px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: #777;
+  margin-top: 30px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <span class="badge">MÉTODO SEM ROSTO</span>
+  <span class="badge">⚠️ ACESSO LIMITADO HOJE</span>
 
-    <h1>Ganhe Dinheiro com Inteligência Artificial Sem Aparecer</h1>
+  <h1>Enriquecimento com Inteligência Artificial Sem Aparecer</h1>
 
-    <p class="subtitle">
-      Aprenda o método usado para criar personas digitais, conteúdos e vendas automáticas usando IA — mesmo começando do zero.
-    </p>
+  <p class="subtitle">
+    Um método prático para criar renda digital usando IA, mesmo começando do zero e sem se expor.
+  </p>
 
-    <div class="card">
-      <ul>
-        <li>Sem gravar vídeos</li>
-        <li>Sem mostrar o rosto</li>
-        <li>Sem seguidores</li>
-        <li>Conteúdo + scripts prontos</li>
-        <li>Método validado para iniciantes</li>
-      </ul>
-    </div>
-
-    <div class="price-box">
-      <div class="price-old">De R$97,00</div>
-      <div class="price">R$59,90</div>
-      <button class="button" onclick="window.location.href='LINK_DO_CHECKOUT_AQUI'">
-        Quero Acessar Agora
-      </button>
-    </div>
-
-    <div class="security">
-      🔒 Pagamento 100% seguro • Garantia de 7 dias
-    </div>
-
-    <div class="footer">
-      © 2026 • Renda com IA • Todos os direitos reservados
-    </div>
-
+  <div class="timer-box">
+    <div class="timer-title">⏰ Esta oferta expira em:</div>
+    <div id="timer" class="timer">00:00</div>
   </div>
+
+  <div class="alert">
+    ⚠️ <strong>Atenção:</strong> este método está sendo liberado com desconto apenas para novos alunos. Após o tempo acabar, o valor volta ao normal.
+  </div>
+
+  <div class="card">
+    <h3>O que você vai desbloquear:</h3>
+    <ul>
+      <li>Como usar IA para criar renda online</li>
+      <li>Estratégia sem aparecer em vídeos</li>
+      <li>Modelos prontos para copiar e colar</li>
+      <li>Passo a passo simples e direto</li>
+      <li>Método aplicável ainda hoje</li>
+    </ul>
+  </div>
+
+  <div class="social-proof">
+    🔥 <strong>Pessoas comuns</strong> já estão usando esse método para criar ativos digitais e gerar renda extra com IA, mesmo sem experiência.
+  </div>
+
+  <div class="price-box">
+    <div class="price-old">De R$97,00</div>
+    <div class="price">R$59,90</div>
+
+    <button class="button" onclick="window.location.href='LINK_DO_CHECKOUT_AQUI'">
+      Quero Garantir Meu Acesso Agora
+    </button>
+  </div>
+
+  <div class="security">
+    🔒 Pagamento seguro • Garantia incondicional de 7 dias
+  </div>
+
+  <div class="footer">
+    © 2026 • Renda com IA • Todos os direitos reservados
+  </div>
+
+</div>
+
+<script>
+// CONTAGEM REGRESSIVA (15 minutos)
+let tempo = 15 * 60;
+
+function atualizarTimer() {
+  const minutos = Math.floor(tempo / 60);
+  const segundos = tempo % 60;
+
+  document.getElementById("timer").innerHTML =
+    String(minutos).padStart(2, '0') + ":" +
+    String(segundos).padStart(2, '0');
+
+  if (tempo > 0) tempo--;
+}
+
+setInterval(atualizarTimer, 1000);
+atualizarTimer();
+</script>
 
 </body>
 </html>
