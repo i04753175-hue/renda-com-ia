@@ -6,154 +6,161 @@
 <title>Renda com IA</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #0b0b0b;
-  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #fff;
 }
 
+/* HERO */
 .hero {
-  position: relative;
   min-height: 100vh;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.95)),
+    url("COLE_AQUI_O_LINK_RAW_DA_IMAGEM.jpg");
+  background-size: cover;
+  background-position: center top;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  background:
-    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
-    url("https://images.unsplash.com/photo-1677442136019-21780ecad995");
-  background-size: cover;
-  background-position: center;
+  padding: 20px;
 }
 
+/* CAIXA CENTRAL */
 .box {
-  max-width: 420px;
-  background: rgba(15,15,15,0.95);
+  max-width: 460px;
+  background: rgba(10,10,10,0.92);
   border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 0 40px rgba(0,255,153,0.15);
+  padding: 26px;
+  box-shadow: 0 0 60px rgba(0,255,153,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
-.image-box img {
-  width: 100%;
-  display: block;
-}
-
-.content {
-  padding: 24px;
-}
-
-.tag {
-  background: linear-gradient(90deg, #ff3b3b, #ff0000);
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 12px;
-  margin-bottom: 14px;
+/* ALERTA */
+.alert {
+  background: linear-gradient(90deg, #ff0000, #ff3b3b);
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  text-align: center;
   font-weight: bold;
+  margin-bottom: 18px;
 }
 
+/* TITULO */
 h1 {
-  font-size: 26px;
-  line-height: 1.2;
-  margin-bottom: 12px;
+  font-size: 28px;
+  line-height: 1.15;
+  margin-bottom: 14px;
 }
 
 h1 span {
   color: #00ff99;
 }
 
+/* SUB */
 .subtitle {
-  font-size: 15px;
+  font-size: 16px;
   color: #ddd;
   margin-bottom: 18px;
 }
 
-.bullets {
-  margin-bottom: 20px;
-}
-
-.bullets div {
-  margin-bottom: 10px;
+/* BLOCO DE DOR */
+.pain {
+  background: #0f0f0f;
+  border-left: 4px solid #ff3b3b;
+  padding: 14px;
+  border-radius: 10px;
   font-size: 14px;
+  margin-bottom: 18px;
 }
 
-.bullets div::before {
+/* BENEFÍCIOS */
+.list div {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.list div::before {
   content: "✔ ";
   color: #00ff99;
   font-weight: bold;
 }
 
+/* TIMER */
 .timer {
   background: #111;
   border-radius: 14px;
   padding: 14px;
   text-align: center;
-  margin-bottom: 18px;
+  margin: 22px 0;
 }
 
 .timer span {
   color: #ff3b3b;
+  font-size: 14px;
   font-weight: bold;
 }
 
-.time {
-  font-size: 26px;
+#time {
+  font-size: 30px;
   font-weight: bold;
   margin-top: 6px;
 }
 
+/* PREÇO */
 .price {
   text-align: center;
   margin-bottom: 18px;
 }
 
 .old {
+  color: #aaa;
   text-decoration: line-through;
-  color: #888;
   font-size: 14px;
 }
 
 .current {
-  font-size: 34px;
+  font-size: 36px;
   color: #00ff99;
   font-weight: bold;
 }
 
+/* BOTÃO */
 button {
   width: 100%;
   padding: 18px;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: bold;
   border-radius: 16px;
   border: none;
   cursor: pointer;
   background: linear-gradient(90deg, #00ff99, #00cc7a);
   color: #000;
-  box-shadow: 0 0 25px rgba(0,255,153,0.4);
+  box-shadow: 0 0 30px rgba(0,255,153,0.6);
 }
 
 button:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-.security {
+/* PROVA */
+.proof {
   text-align: center;
-  font-size: 12px;
-  color: #aaa;
+  font-size: 13px;
+  color: #bbb;
   margin-top: 14px;
 }
 
-.footer {
+/* SEGURANÇA */
+.security {
   text-align: center;
-  font-size: 11px;
-  color: #666;
-  margin-top: 18px;
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
 }
 </style>
 </head>
@@ -163,52 +170,56 @@ button:hover {
 <section class="hero">
   <div class="box">
 
-    <!-- IMAGEM DO ROSTO DO PRODUTO -->
-    <div class="image-box">
-      <img src="https://raw.githubusercontent.com/seuusuario/seurepositorio/main/modelo.jpg" alt="Renda com IA">
+    <div class="alert">
+      ⚠️ ATENÇÃO: Essa página pode sair do ar a qualquer momento
     </div>
 
-    <div class="content">
-      <div class="tag">🔥 ACESSO LIMITADO</div>
+    <h1>
+      Pessoas comuns estão usando <span>Inteligência Artificial</span> para criar renda
+      <span>sem aparecer</span>
+    </h1>
 
-      <h1>
-        Descubra como pessoas comuns estão criando <span>renda com IA</span>
-        sem aparecer e começando do zero
-      </h1>
+    <p class="subtitle">
+      Mesmo começando do zero, sem seguidores, sem gravar vídeos e sem experiência.
+    </p>
 
-      <p class="subtitle">
-        Um método simples, discreto e aplicável ainda hoje — mesmo que você nunca tenha ganhado dinheiro online.
-      </p>
-
-      <div class="bullets">
-        <div>Sem gravar vídeos</div>
-        <div>Sem mostrar o rosto</div>
-        <div>Sem experiência técnica</div>
-        <div>Usando apenas Inteligência Artificial</div>
-      </div>
-
-      <div class="timer">
-        <span>Essa oferta expira em:</span>
-        <div id="time" class="time">00:00</div>
-      </div>
-
-      <div class="price">
-        <div class="old">De R$97,00</div>
-        <div class="current">R$59,90</div>
-      </div>
-
-      <button onclick="window.location.href='https://pay.kiwify.com.br/QDu3ZMn'">
-        QUERO MEU ACESSO AGORA
-      </button>
-
-      <div class="security">
-        🔒 Pagamento 100% seguro • Garantia de 7 dias
-      </div>
-
-      <div class="footer">
-        © 2026 • Renda com IA
-      </div>
+    <div class="pain">
+      ❌ Trabalhar muito e ganhar pouco  
+      ❌ Depender de chefe  
+      ❌ Não saber como ganhar dinheiro online  
+      <br><br>
+      👉 Este método foi criado para quebrar isso.
     </div>
+
+    <div class="list">
+      <div>Método prático e direto</div>
+      <div>Modelos prontos para copiar</div>
+      <div>Funciona mesmo sem aparecer</div>
+      <div>Aplicável ainda hoje</div>
+    </div>
+
+    <div class="timer">
+      <span>Oferta expira em:</span>
+      <div id="time">00:00</div>
+    </div>
+
+    <div class="price">
+      <div class="old">De R$97,00</div>
+      <div class="current">R$59,90</div>
+    </div>
+
+    <button onclick="window.location.href='https://pay.kiwify.com.br/QDu3ZMn'">
+      QUERO ENTRAR AGORA
+    </button>
+
+    <div class="proof">
+      🔥 Vagas limitadas • Acesso imediato após pagamento
+    </div>
+
+    <div class="security">
+      🔒 Checkout seguro • Garantia de 7 dias
+    </div>
+
   </div>
 </section>
 
