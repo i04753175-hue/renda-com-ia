@@ -10,47 +10,69 @@
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #000;
+  font-family: 'Segoe UI', Arial, sans-serif;
   color: #fff;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
 }
 
-/* HERO */
+/* FUNDO DECORATIVO */
+.bg-shape {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,255,153,0.35), transparent 70%);
+  top: -150px;
+  left: -150px;
+  filter: blur(40px);
+}
+
+.bg-shape2 {
+  position: fixed;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(138,43,226,0.35), transparent 70%);
+  bottom: -150px;
+  right: -150px;
+  filter: blur(50px);
+}
+
 .hero {
   min-height: 100vh;
   background:
-    linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.95)),
+    linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.85)),
     url("COLE_AQUI_O_LINK_RAW_DA_IMAGEM.jpg");
   background-size: cover;
   background-position: center top;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 24px;
 }
 
-/* CAIXA CENTRAL */
 .box {
   max-width: 460px;
-  background: rgba(10,10,10,0.92);
-  border-radius: 22px;
+  background: rgba(20,20,20,0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 26px;
   padding: 26px;
-  box-shadow: 0 0 60px rgba(0,255,153,0.35);
-  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 0 40px rgba(0,255,153,0.35),
+    0 0 80px rgba(138,43,226,0.15);
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
 /* ALERTA */
 .alert {
-  background: linear-gradient(90deg, #ff0000, #ff3b3b);
+  background: linear-gradient(90deg, #ff512f, #dd2476);
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 20px;
   font-size: 13px;
   text-align: center;
   font-weight: bold;
   margin-bottom: 18px;
 }
 
-/* TITULO */
+/* TÍTULO */
 h1 {
   font-size: 28px;
   line-height: 1.15;
@@ -64,21 +86,21 @@ h1 span {
 /* SUB */
 .subtitle {
   font-size: 16px;
-  color: #ddd;
+  color: #e0e0e0;
   margin-bottom: 18px;
 }
 
-/* BLOCO DE DOR */
+/* BLOCO DOR */
 .pain {
-  background: #0f0f0f;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
   border-left: 4px solid #ff3b3b;
   padding: 14px;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 14px;
   margin-bottom: 18px;
 }
 
-/* BENEFÍCIOS */
+/* LISTA */
 .list div {
   margin-bottom: 10px;
   font-size: 15px;
@@ -92,21 +114,22 @@ h1 span {
 
 /* TIMER */
 .timer {
-  background: #111;
-  border-radius: 14px;
+  background: linear-gradient(135deg, #111, #1c1c1c);
+  border-radius: 16px;
   padding: 14px;
   text-align: center;
   margin: 22px 0;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.6);
 }
 
 .timer span {
-  color: #ff3b3b;
+  color: #ff6a00;
   font-size: 14px;
   font-weight: bold;
 }
 
 #time {
-  font-size: 30px;
+  font-size: 32px;
   font-weight: bold;
   margin-top: 6px;
 }
@@ -118,13 +141,13 @@ h1 span {
 }
 
 .old {
-  color: #aaa;
+  color: #bbb;
   text-decoration: line-through;
   font-size: 14px;
 }
 
 .current {
-  font-size: 36px;
+  font-size: 38px;
   color: #00ff99;
   font-weight: bold;
 }
@@ -135,12 +158,14 @@ button {
   padding: 18px;
   font-size: 19px;
   font-weight: bold;
-  border-radius: 16px;
+  border-radius: 18px;
   border: none;
   cursor: pointer;
-  background: linear-gradient(90deg, #00ff99, #00cc7a);
+  background: linear-gradient(90deg, #00ff99, #00ccff);
   color: #000;
-  box-shadow: 0 0 30px rgba(0,255,153,0.6);
+  box-shadow:
+    0 0 25px rgba(0,255,153,0.6),
+    0 0 50px rgba(0,204,255,0.4);
 }
 
 button:hover {
@@ -151,7 +176,7 @@ button:hover {
 .proof {
   text-align: center;
   font-size: 13px;
-  color: #bbb;
+  color: #ddd;
   margin-top: 14px;
 }
 
@@ -159,13 +184,16 @@ button:hover {
 .security {
   text-align: center;
   font-size: 12px;
-  color: #777;
+  color: #aaa;
   margin-top: 10px;
 }
 </style>
 </head>
 
 <body>
+
+<div class="bg-shape"></div>
+<div class="bg-shape2"></div>
 
 <section class="hero">
   <div class="box">
@@ -175,8 +203,8 @@ button:hover {
     </div>
 
     <h1>
-      Pessoas comuns estão usando <span>Inteligência Artificial</span> para criar renda
-      <span>sem aparecer</span>
+      Pessoas comuns estão usando <span>Inteligência Artificial</span>
+      para criar renda <span>sem aparecer</span>
     </h1>
 
     <p class="subtitle">
@@ -184,16 +212,15 @@ button:hover {
     </p>
 
     <div class="pain">
-      ❌ Trabalhar muito e ganhar pouco  
-      ❌ Depender de chefe  
-      ❌ Não saber como ganhar dinheiro online  
-      <br><br>
+      ❌ Trabalhar muito e ganhar pouco<br>
+      ❌ Depender de chefe<br>
+      ❌ Não saber como ganhar dinheiro online<br><br>
       👉 Este método foi criado para quebrar isso.
     </div>
 
     <div class="list">
-      <div>Método prático e direto</div>
-      <div>Modelos prontos para copiar</div>
+      <div>Método simples e direto</div>
+      <div>Modelos prontos</div>
       <div>Funciona mesmo sem aparecer</div>
       <div>Aplicável ainda hoje</div>
     </div>
@@ -213,7 +240,7 @@ button:hover {
     </button>
 
     <div class="proof">
-      🔥 Vagas limitadas • Acesso imediato após pagamento
+      🔥 Acesso imediato • Vagas limitadas
     </div>
 
     <div class="security">
