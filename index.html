@@ -6,232 +6,223 @@
 <title>Renda com IA</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0b0b0b;
   color: #ffffff;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
   background:
-    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)),
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
     url("https://images.unsplash.com/photo-1677442136019-21780ecad995");
   background-size: cover;
   background-position: center;
 }
 
-.container {
+.box {
   max-width: 420px;
-  margin: auto;
+  background: rgba(15,15,15,0.95);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0,255,153,0.15);
+}
+
+.image-box img {
+  width: 100%;
+  display: block;
+}
+
+.content {
   padding: 24px;
 }
 
-.badge {
-  background: #ff3b3b;
-  color: #fff;
-  font-size: 12px;
+.tag {
+  background: linear-gradient(90deg, #ff3b3b, #ff0000);
+  display: inline-block;
   padding: 6px 14px;
   border-radius: 20px;
-  display: inline-block;
+  font-size: 12px;
   margin-bottom: 14px;
+  font-weight: bold;
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1.2;
   margin-bottom: 12px;
 }
 
+h1 span {
+  color: #00ff99;
+}
+
 .subtitle {
-  font-size: 16px;
-  color: #ddd;
-  margin-bottom: 20px;
-}
-
-.timer-box {
-  background: #111;
-  border-radius: 14px;
-  padding: 16px;
-  text-align: center;
-  margin-bottom: 20px;
-  box-shadow: 0 0 25px rgba(255,0,0,0.2);
-}
-
-.timer-title {
-  font-size: 14px;
-  color: #ff3b3b;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-.timer {
-  font-size: 26px;
-  font-weight: bold;
-}
-
-.alert {
-  background: #1a1a1a;
-  border-left: 4px solid #ff3b3b;
-  padding: 14px;
-  font-size: 14px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-}
-
-.card {
-  background: rgba(15,15,15,0.96);
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.card h3 {
-  margin-top: 0;
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-
-.card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.card li {
-  margin-bottom: 12px;
   font-size: 15px;
+  color: #ddd;
+  margin-bottom: 18px;
 }
 
-.card li::before {
+.bullets {
+  margin-bottom: 20px;
+}
+
+.bullets div {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.bullets div::before {
   content: "✔ ";
   color: #00ff99;
   font-weight: bold;
 }
 
-.social-proof {
-  background: #0d0d0d;
+.timer {
+  background: #111;
   border-radius: 14px;
-  padding: 16px;
-  font-size: 14px;
-  margin-bottom: 22px;
-  border: 1px solid #222;
-}
-
-.price-box {
+  padding: 14px;
   text-align: center;
+  margin-bottom: 18px;
 }
 
-.price-old {
-  text-decoration: line-through;
-  color: #999;
-  font-size: 14px;
+.timer span {
+  color: #ff3b3b;
+  font-weight: bold;
+}
+
+.time {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 6px;
 }
 
 .price {
-  font-size: 34px;
-  font-weight: bold;
-  color: #00ff99;
-  margin: 6px 0;
+  text-align: center;
+  margin-bottom: 18px;
 }
 
-.button {
-  background: linear-gradient(90deg, #00ff99, #00cc7a);
-  color: #000;
-  border: none;
+.old {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+}
+
+.current {
+  font-size: 34px;
+  color: #00ff99;
+  font-weight: bold;
+}
+
+button {
   width: 100%;
-  padding: 16px;
+  padding: 18px;
   font-size: 18px;
   font-weight: bold;
-  border-radius: 14px;
+  border-radius: 16px;
+  border: none;
   cursor: pointer;
-  margin-top: 12px;
+  background: linear-gradient(90deg, #00ff99, #00cc7a);
+  color: #000;
+  box-shadow: 0 0 25px rgba(0,255,153,0.4);
+}
+
+button:hover {
+  transform: scale(1.03);
 }
 
 .security {
   text-align: center;
   font-size: 12px;
   color: #aaa;
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .footer {
   text-align: center;
   font-size: 11px;
-  color: #777;
-  margin-top: 30px;
+  color: #666;
+  margin-top: 18px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<section class="hero">
+  <div class="box">
 
-  <span class="badge">⚠️ ACESSO LIMITADO HOJE</span>
+    <!-- IMAGEM DO ROSTO DO PRODUTO -->
+    <div class="image-box">
+      <img src="https://raw.githubusercontent.com/seuusuario/seurepositorio/main/modelo.jpg" alt="Renda com IA">
+    </div>
 
-  <h1>Enriquecimento com Inteligência Artificial Sem Aparecer</h1>
+    <div class="content">
+      <div class="tag">🔥 ACESSO LIMITADO</div>
 
-  <p class="subtitle">
-    Um método prático para criar renda digital usando IA, mesmo começando do zero e sem se expor.
-  </p>
+      <h1>
+        Descubra como pessoas comuns estão criando <span>renda com IA</span>
+        sem aparecer e começando do zero
+      </h1>
 
-  <div class="timer-box">
-    <div class="timer-title">⏰ Esta oferta expira em:</div>
-    <div id="timer" class="timer">00:00</div>
+      <p class="subtitle">
+        Um método simples, discreto e aplicável ainda hoje — mesmo que você nunca tenha ganhado dinheiro online.
+      </p>
+
+      <div class="bullets">
+        <div>Sem gravar vídeos</div>
+        <div>Sem mostrar o rosto</div>
+        <div>Sem experiência técnica</div>
+        <div>Usando apenas Inteligência Artificial</div>
+      </div>
+
+      <div class="timer">
+        <span>Essa oferta expira em:</span>
+        <div id="time" class="time">00:00</div>
+      </div>
+
+      <div class="price">
+        <div class="old">De R$97,00</div>
+        <div class="current">R$59,90</div>
+      </div>
+
+      <button onclick="window.location.href='https://pay.kiwify.com.br/QDu3ZMn'">
+        QUERO MEU ACESSO AGORA
+      </button>
+
+      <div class="security">
+        🔒 Pagamento 100% seguro • Garantia de 7 dias
+      </div>
+
+      <div class="footer">
+        © 2026 • Renda com IA
+      </div>
+    </div>
   </div>
-
-  <div class="alert">
-    ⚠️ <strong>Atenção:</strong> esta condição especial é liberada apenas para novos alunos. Após o tempo acabar, o valor pode ser alterado.
-  </div>
-
-  <div class="card">
-    <h3>O que você vai desbloquear:</h3>
-    <ul>
-      <li>Como criar renda online com IA</li>
-      <li>Estratégia sem aparecer em vídeos</li>
-      <li>Modelos prontos para copiar e colar</li>
-      <li>Passo a passo simples e direto</li>
-      <li>Método aplicável ainda hoje</li>
-    </ul>
-  </div>
-
-  <div class="social-proof">
-    🔥 Pessoas comuns já estão usando Inteligência Artificial para criar ativos digitais e gerar renda extra sem aparecer.
-  </div>
-
-  <div class="price-box">
-    <div class="price-old">De R$97,00</div>
-    <div class="price">R$59,90</div>
-
-    <button class="button" onclick="window.location.href='https://pay.kiwify.com.br/QDu3ZMn'">
-      Quero Garantir Meu Acesso Agora
-    </button>
-  </div>
-
-  <div class="security">
-    🔒 Pagamento 100% seguro • Garantia incondicional de 7 dias
-  </div>
-
-  <div class="footer">
-    © 2026 • Renda com IA • Todos os direitos reservados
-  </div>
-
-</div>
+</section>
 
 <script>
-// CONTAGEM REGRESSIVA (15 minutos)
 let tempo = 15 * 60;
-
-function atualizarTimer() {
-  const minutos = Math.floor(tempo / 60);
-  const segundos = tempo % 60;
-
-  document.getElementById("timer").innerHTML =
-    String(minutos).padStart(2, '0') + ":" +
-    String(segundos).padStart(2, '0');
-
+function atualizar() {
+  let m = Math.floor(tempo / 60);
+  let s = tempo % 60;
+  document.getElementById("time").innerHTML =
+    String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
   if (tempo > 0) tempo--;
 }
-
-setInterval(atualizarTimer, 1000);
-atualizarTimer();
+setInterval(atualizar, 1000);
+atualizar();
 </script>
 
 </body>
